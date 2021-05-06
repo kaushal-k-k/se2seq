@@ -1,0 +1,114 @@
+
+// Java program to illustrate the
+// concept of single inheritance
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+class Employee {
+    public String name;
+    public int id;
+    
+    Employee(String name,int id)
+    {
+        this.name = name;
+        this.id = id;
+    }
+    
+    @Override public String toString()
+    {
+        return "name"+name+" "+"id "+id; 
+    }
+    
+    public double CalculatePay()
+    {
+        return 0;
+    }
+}
+
+class HourlyEmployee extends Employee{
+    private double hourWage;
+    private double hoursWorked;
+    
+    HourlyEmployee(String name,int id)
+    {
+        super(name,id);
+        this.hourWage = 0;
+        this.hoursWorked = 0;
+    }
+    
+     public double getHourWage()
+    {
+        return this.hourWage;
+    }
+    
+    public void setHourWage(double n)
+    {
+        this.hourWage = n;
+    }
+    public double getHourWorked()
+    {
+        return this.hoursWorked;
+    }
+    public void setHourWorked(double n)
+    {
+        this.hoursWorked = n;
+    }
+    public double CalculatePay()
+    {
+        return 2 * this.hourWage * this.hoursWorked;
+    }
+    
+    public boolean Eligibility()
+    {
+        return true;
+    }
+    
+   
+}
+class Student extends HourlyEmployee {
+    private char gpa;
+    
+    Student(String s,int i,double hw,double hp,char c )
+    {
+        super(s,i);
+        super.setHourWage(hw);
+        super.setHourWorked(hp);
+        this.gpa = c;
+    }
+    
+    public void setGpa(char g)
+    {
+        this.gpa = g;
+    }
+    
+    public char getGpa()
+    {
+        return this.gpa;
+    }
+    
+    public boolean Eligibility()
+    {
+        if(this.gpa == 'A') {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+}
+
+public class EmployeeTest {
+    
+  public static void main(String[] args) {
+  Student s1 = new Student("sqw",12,12,12,'A');
+  Student s2 = new Student("s2",12,12,12,'B');
+//   HourlyEmployee e = new HourlyEmployee("qwe",12);
+   
+    System.out.println("pay for s1: " + s1.CalculatePay());
+     System.out.println("eligible for s2: " + s2.Eligibility());
+    
+ 
+  }
+  
+}

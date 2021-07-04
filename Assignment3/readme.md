@@ -2,6 +2,7 @@
 # DL
 '''3k & sonagara'''
 ## report link : https://wandb.ai/sonagara/DL_A3_Q5_final_final/reports/Assignment-3--Vmlldzo3MDkyMjA
+the problem descriptions are in the report link
 
 ## the DL_A3_Q2 contains codes for q2 and q4, and DL_A3_Q5 contains code for q5 and q6
 
